@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail Project</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="ajaxListIngredients()">
+
+
+    <!----------------------    Navbar  -------------------->
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">Cocktail project</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Search cocktail by name</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row my-row">
+
+            <div class="col-md-1"> </div>
+
+            <!----------------------      Ingredients datalist div    ----------------------->
+            <div class="col-md-4 datalistWanted text-center mt-5"> </div>
+
+
+
+            <!----------------------      Search button div    ----------------------->
+            <div class="d-flex justify-content-center align-items-end col-md-2 searchDiv">
+                <button id="searchButton" class="btn btn-primary"> Search</button>
+            </div>
+
+
+
+
+            <!----------------------     Unwanted Ingredients datalist div    ----------------------->
+            <div class="col-md-4 datalistUnwanted text-center mt-5 b"> </div>
+            <div class="col-md-1"> </div>
+
+
+
+
+
+
+
+            <div class="col-md-1"> </div>
+            <!----------------------      Added ingredients div    ----------------------->
+            <div class="col-md-4 addedIngredients  mt-5"> </div>
+            <div class="col-md-2"> </div>
+
+
+
+            <!----------------------      Unwanted ingredients div    ----------------------->
+            <div class="col-md-4 unwantedIngredients mt-5"> </div>
+            <div class="col-md-1"> </div>
+
+        </div>
+        <!-- END div row -->
+
+    </div>
+    <!-- END div container -->
+
+
+
+
+
+    <!----------------------      Results div    ----------------------->
+
+    <div class="container mt-3 visually-hidden cocktails-results">
+        <!-- Jumbotron -->
+        <div class="text-center p-4 shadow-4 rounded-3">
+            <h2 class="results-title"></h2>
+            <p class="results-content"></p>
+        </div>
+        <!-- Jumbotron -->
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/ingredients.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

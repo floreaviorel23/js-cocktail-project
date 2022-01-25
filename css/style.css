@@ -1,0 +1,52 @@
+@media (max-width: 991px){
+    .index-search-bar{
+        margin: 0 5px;
+        width: 98.3%;
+    }
+}
+
+@media (max-width: 768px){
+    .index-search-bar{
+        margin: 0 5px;
+        width: 98%;
+    }
+
+    .my-row{
+        display: flex; flex-direction: column;
+    }
+
+    .datalistWanted{
+        order: 1;
+    }
+
+    .datalistUnwanted{
+        order: 3;
+    }
+
+    .addedIngredients{
+        order: 2;   
+    }
+
+    .unwantedIngredients{
+        order: 4;
+    }
+
+    .searchDiv{
+        order: 5;
+    }
+}
+
+
+body{
+    margin-bottom: 100px;
+    background-color: #f2f2f2;
+}
+
+.my-card{
+    width: 400px;
+}
+
+
+.my-card .measures{
+    font-weight: bold;
+}

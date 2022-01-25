@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail Project</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!----------------------    Navbar  -------------------->
+    
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">Cocktail project</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="ingredients.html" class="nav-link">Search by ingredient</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!----------------------    Form  -------------------->
+
+    <div class="container mt-5 pt-5">
+        <form action="#" onSubmit="searchButton(); return false">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 mb-3 px-1 index-search-bar">
+                        <input type="text" class="form-control cocktail-name" placeholder="Cocktail name">
+                    </div>
+                </div>
+
+                <div class="row g-1">
+                    <div class="col-lg-3"></div>
+                    <div class="input-group-text col-lg-2">
+                        <input id="isAlcoholic" class="form-check-input mt-0" type="checkbox" value="" checked="true">
+                        <label for="Alcoholic drink" class="lg-3 ps-2">Alcoholic drink</label>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <button type="submit" class="btn btn-primary col-lg-2">Search</button>
+                </div>
+        </form>
+    </div>
+
+
+
+    <!----------------------      Results div    ----------------------->
+
+    <div class="container results mt-5">  </div>
+
+
+
+    <!----------------------    Show more info div  -------------------->
+
+    <div class="container more-info mt-5 justify-content-center d-flex">  </div>
+
+
+
+
+
+
+
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
