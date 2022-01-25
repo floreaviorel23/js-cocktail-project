@@ -266,7 +266,6 @@ async function findDesiredCocktails() {
             }
             if (intersect.length == 0)
                 break;
-            desiredCocktails = intersect;
         }
         catch (error) {
             window.alert(`Ingredient ${ingredient} doesn't exist`);
@@ -274,6 +273,7 @@ async function findDesiredCocktails() {
             return -1;
         }
     }
+    desiredCocktails = intersect;
     if (unwantedIngredients.length != 0) {
         let success = await filterUnwantedResults();
         if (success == -1)
