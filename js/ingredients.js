@@ -93,6 +93,16 @@ function addIngredientButton() {
     let val = document.getElementById("ingredientsDataList").value;
     document.getElementById("ingredientsDataList").value = null;
 
+    try {
+        let valUnderscore = val.replaceAll(" ", "_");
+        let spanName = `.span${valUnderscore}`;
+        let spanDiv = document.querySelector(spanName);
+    }
+    catch (err) {
+        console.log(err);
+        return;
+    }
+
     if (!alreadyAdded(addedIngredients, val) && val != '') {
         if (!alreadyAdded(unwantedIngredients, val)) {
             addedIngredients.push(val);
@@ -110,6 +120,16 @@ function addIngredientButton() {
 function addUnwantedIngredientButton() {
     let val = document.getElementById("unwantedIngredientsDataList").value;
     document.getElementById("unwantedIngredientsDataList").value = null;
+
+    try {
+        let valUnderscore = val.replaceAll(" ", "_");
+        let spanName = `.span${valUnderscore}`;
+        let spanDiv = document.querySelector(spanName);
+    }
+    catch (err) {
+        console.log(err);
+        return;
+    }
 
     if (!alreadyAdded(unwantedIngredients, val) && val != '') {
         if (!alreadyAdded(addedIngredients, val)) {
@@ -238,17 +258,35 @@ function removeFromDOM(val) {
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", async function () {
     desiredCocktails = [];
-    if (addedIngredients.length > 0) {
-        let success = await findDesiredCocktails();
-        if (success != -1)
-            showResults();
+    if (!isValid(addedIngredients) || !isValid(unwantedIngredients)) {
+        return;
     }
     else {
-        window.alert("Add at least one ingredient please.");
+        if (addedIngredients.length > 0) {
+            let success = await findDesiredCocktails();
+            if (success != -1)
+                showResults();
+        }
+        else {
+            window.alert("Add at least one ingredient please.");
+        }
     }
 });
 
 
+
+
+
+function isValid(arrayIngredients) {
+    for (let i = 0; i < arrayIngredients.length; i++) {
+        let ingred = arrayIngredients[i];
+        if (!allIngredients.includes(ingred)) {
+            window.alert(`Ingredient ${ingred} doesn't exist`);
+            return false;
+        }
+    }
+    return true;
+}
 
 
 
